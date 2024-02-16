@@ -8,8 +8,12 @@ public class movement : MonoBehaviour
     public VariableJoystick variableJoystick;
     public Rigidbody rb;
     public float jumpforce;
+    private Transform cameraMain;
 
-
+    private void Start()
+    {
+        cameraMain = Camera.main.transform; 
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -18,8 +22,9 @@ public class movement : MonoBehaviour
         }
     }
     public void FixedUpdate()
-    {
-        Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
+    { 
+        Vector3 direction = cameraMain.forward * variableJoystick.Vertical + cameraMain.right * variableJoystick.Horizontal;
+        direction.y = 0;
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
     public void jump()

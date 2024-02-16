@@ -27,7 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         Vector2 delta = playerInput.player.look.ReadValue<Vector2>();
-        cinemachine.m_XAxis.Value += delta.x * 200 * lookspeed * Time.deltaTime;
+        cinemachine.m_XAxis.Value += delta.x * 100 * lookspeed * Time.deltaTime;
         cinemachine.m_YAxis.Value += delta.y * lookspeed * Time.deltaTime;
     }
 }
