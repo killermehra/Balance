@@ -5,7 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     public float speed;
-    public VariableJoystick variableJoystick;
+    public FixedJoystick Joystick;
     public Rigidbody rb;
     public float jumpforce;
     private Transform cameraMain;
@@ -23,7 +23,7 @@ public class movement : MonoBehaviour
     }
     public void FixedUpdate()
     { 
-        Vector3 direction = cameraMain.forward * variableJoystick.Vertical + cameraMain.right * variableJoystick.Horizontal;
+        Vector3 direction = cameraMain.forward * Joystick.Vertical + cameraMain.right * Joystick.Horizontal;
         direction.y = 0;
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }

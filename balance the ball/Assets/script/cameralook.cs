@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
+
 [RequireComponent(typeof(CinemachineFreeLook))]
 public class NewBehaviourScript : MonoBehaviour
 {
