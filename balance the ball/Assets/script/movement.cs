@@ -8,11 +8,12 @@ public class movement : MonoBehaviour
     public FixedJoystick Joystick;
     public Rigidbody rb;
     public float jumpforce;
-    private Transform cameraMain;
+    public Transform cameraMain;
 
     private void Start()
     {
         cameraMain = Camera.main.transform; 
+       
     }
     private void Update()
     {
@@ -22,14 +23,22 @@ public class movement : MonoBehaviour
         }
     }
     public void FixedUpdate()
-    { 
-        Vector3 direction = cameraMain.forward * Joystick.Vertical + cameraMain.right * Joystick.Horizontal;
-        direction.y = 0;
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+    {
+        move1();
     }
     public void jump()
     {
         rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+
+    }
+  
+    public void move1()
+    {
+        Vector3 direction = cameraMain.forward * Joystick.Vertical + cameraMain.right * Joystick.Horizontal;
+        direction.y = 0;
+
+        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
 
     }
 }
