@@ -7,6 +7,7 @@ public class followcam : MonoBehaviour
     public Transform target;
     public float followSpeed = 5f;
     public  Vector3 offset;
+    public Transform look;
     private void Start()
     {
         offset = transform.position - target.position;
@@ -15,5 +16,7 @@ public class followcam : MonoBehaviour
     private void Update()
     {
         transform.position = new Vector3(target.position.x+offset.x,target.position.y+offset.y ,target.position.z+offset.z);
+        transform.LookAt(target);
     }
+    
 }

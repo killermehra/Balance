@@ -35,7 +35,7 @@ public class move2 : MonoBehaviour
     }
     public void movement2()
     {
-        Vector3 move = cam2.right  * Joystick.Vertical + cam2.forward* -1 * Joystick.Horizontal;
+        Vector3 move = cam2.forward  * Joystick.Vertical + cam2.right * Joystick.Horizontal;
         move.y = 0;
         rb.AddForce(move * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }
