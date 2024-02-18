@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000011912021528}
   - component: {fileID: 33000013666524252}
   - component: {fileID: 23000010399293100}
+  - component: {fileID: 1499567365701317212}
   m_Layer: 0
   m_Name: Jeep
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1499567365701317212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012579557798}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8610989, y: 0.8030627, z: 1.3323128}
+  m_Center: {x: -0.0040136725, y: 0.40519118, z: -0.32486606}
