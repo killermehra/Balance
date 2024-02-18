@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000014107097140}
   - component: {fileID: 33000010986952640}
   - component: {fileID: 23000013472628100}
+  - component: {fileID: 8965481387646168874}
   m_Layer: 0
   m_Name: Basic High Green
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8965481387646168874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014146656400}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.7164326, y: 9.771031, z: 5.6402917}
+  m_Center: {x: 0.00562346, y: 4.884005, z: -0.03248763}
