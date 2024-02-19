@@ -37,11 +37,14 @@ public class cammanagement : MonoBehaviour
             move.enabled = false;
             move2.enabled = true;
         }
-        else
+        else if (other.gameObject.CompareTag("camchange2"))
         {
             cam1.SetActive(true);
             move.enabled = true;
+            move2.enabled = false;
+            cam2.SetActive(false);
 
         }
     }
+    
 }
