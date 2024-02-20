@@ -8,6 +8,7 @@ TagManager:
   - player
   - ground
   - camchange2
+  - jump
   layers:
   - Default
   - TransparentFX
