@@ -10,9 +10,10 @@ public class win : MonoBehaviour
     {
         panlewin.SetActive(false);
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("player"))
+        if(other.gameObject.CompareTag("Player"))
         {
             panlewin.SetActive(true);
             Time.timeScale = 0f;
