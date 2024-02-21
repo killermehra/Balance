@@ -16,7 +16,7 @@ public class win : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             panlewin.SetActive(true);
-            Time.timeScale = 0f;
+           
         }
     }
     public void loadsceen()

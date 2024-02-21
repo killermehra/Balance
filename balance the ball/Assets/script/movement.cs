@@ -9,11 +9,24 @@ public class movement : MonoBehaviour
     public Rigidbody rb;
     public float jumpforce;
     public Transform cameraMain;
+    public AudioSource jumpsSound;
+    public AudioClip jumpplay;
+    private bool isGrounded = true;
+    private bool jumpactivate;
+   // [SerializeField] private float onGroundGravity;
+   // [SerializeField] private float inAirGravity;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
 
     private void Start()
     {
-        cameraMain = Camera.main.transform; 
-       
+        cameraMain = Camera.main.transform;
+        jumpsSound = GetComponent<AudioSource>();
+        jumpactivate = false;
     }
     private void Update()
     {
@@ -21,14 +34,39 @@ public class movement : MonoBehaviour
         {
             jump();
         }
+      
+    
+}
+    private void PlayLandingSound()
+    {
+        
+        if (jumpsSound!= null&& jumpplay!=null)
+        {
+
+            jumpsSound.PlayOneShot(jumpplay);
+        }
     }
+
+
+
+
     public void FixedUpdate()
     {
         move1();
     }
     public void jump()
     {
+       // if (rb.velocity.y >= .1)
+       // {
+      //      Physics.gravity = new Vector3(0, -inAirGravity, 0);
+      //  }
+      //  else if (rb.velocity.y >= -.1)
+      //  {
+      //      Physics.gravity = new Vector3(0, -onGroundGravity, 0);
+      //  }
+
         rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+        
 
     }
   
@@ -45,7 +83,24 @@ public class movement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("jump"))
         {
+
+            jumpactivate = true;
             jump();
+        }
+       
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("ground"))
+        {
+            if (isGrounded && jumpactivate)
+            {
+
+               
+                
+             PlayLandingSound();
+                
+            }
         }
     }
 }
