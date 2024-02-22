@@ -9,6 +9,7 @@ public class cammanagement : MonoBehaviour
     public GameObject cam2;
     public  movement move;
     public move2 move2;
+    public Joystick joystick;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,24 @@ public class cammanagement : MonoBehaviour
     }
 
 
-    
+    public void Update()
+    {
+        if (joystick.Vertical >= 1)
+        {
+            cam1.SetActive(true);
+            cam2.SetActive(false);
+
+        }else if (joystick.Vertical <= -1)
+        {
+            cam1.SetActive(false);
+                cam2.SetActive(true);
+        }
+        if(joystick.Horizontal >= 1)
+        {
+            cam2.SetActive(true);
+            cam1.SetActive(false);
+        }
+    }
 
 
 
