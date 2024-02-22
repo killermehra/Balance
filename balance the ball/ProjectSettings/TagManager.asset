@@ -9,14 +9,16 @@ TagManager:
   - ground
   - camchange2
   - jump
+  - speed
+  - superjump
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Outlined
   - Water
   - UI
-  - 
+  - noOutlined
   - 
   - 
   - 

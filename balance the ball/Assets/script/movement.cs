@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class movement : MonoBehaviour
@@ -13,12 +14,15 @@ public class movement : MonoBehaviour
     public AudioClip jumpplay;
     private bool isGrounded = true;
     private bool jumpactivate;
+    public Animator animjump;
+    public float Dashspeed;
    // [SerializeField] private float onGroundGravity;
    // [SerializeField] private float inAirGravity;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
 
 
@@ -87,6 +91,10 @@ public class movement : MonoBehaviour
             jumpactivate = true;
             jump();
         }
+        else if(other.gameObject.CompareTag("superjump"))
+        {
+            rb.AddForce(Vector3.up * 50, ForceMode.Impulse);
+        }
        
     }
     private void OnCollisionEnter(Collision collision)
@@ -97,10 +105,25 @@ public class movement : MonoBehaviour
             {
 
                
-                
+                animjump.Play("jump");
              PlayLandingSound();
                 
             }
+        }
+    }
+
+
+    public void Dash()
+    {
+       
+        rb.velocity = new Vector3(0,0,transform.localScale.y * Dashspeed);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("speed"))
+        {
+            Dash();
         }
     }
 }
