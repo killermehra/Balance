@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010986952640}
   - component: {fileID: 23000013472628100}
   - component: {fileID: 8965481387646168874}
+  - component: {fileID: 2940580139401465335}
   m_Layer: 0
   m_Name: Basic High Green
   m_TagString: Untagged
@@ -105,3 +106,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.7164326, y: 9.771031, z: 5.6402917}
   m_Center: {x: 0.00562346, y: 4.884005, z: -0.03248763}
+--- !u!114 &2940580139401465335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014146656400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 3.09
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
