@@ -22,12 +22,9 @@ public class fallscript : MonoBehaviour
     }
     IEnumerator fall()
     {
-        rb.useGravity = false;
+       
         yield return new WaitForSeconds(5f);
         rb.useGravity = true;
-
-                     
-
-            
+                                 
     }
 }
