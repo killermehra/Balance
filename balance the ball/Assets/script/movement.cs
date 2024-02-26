@@ -16,6 +16,7 @@ public class movement : MonoBehaviour
     private bool jumpactivate;
     public Animator animjump;
     public float Dashspeed;
+    public AudioSource jumpsource;
    // [SerializeField] private float onGroundGravity;
    // [SerializeField] private float inAirGravity;
 
@@ -46,8 +47,7 @@ public class movement : MonoBehaviour
         
         if (jumpsSound!= null&& jumpplay!=null)
         {
-
-            jumpsSound.PlayOneShot(jumpplay);
+            jumpsSound.Play();
         }
     }
 
@@ -90,6 +90,7 @@ public class movement : MonoBehaviour
 
             jumpactivate = true;
             jump();
+            jumpsource.Play();
         }
         else if(other.gameObject.CompareTag("superjump"))
         {
